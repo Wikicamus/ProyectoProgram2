@@ -9,32 +9,37 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: purple;" stylesheets="@../css/table.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.LoginController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: purple;" stylesheets="@../css/table.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.RegistraController">
    <children>
       <BorderPane id="BorderPane" layoutX="-7.0" prefHeight="400.0" prefWidth="608.0" style="-fx-background-image: purple;" stylesheets="@../css/table.css">
          <center>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #1090B9; -fx-background-radius: 10;" BorderPane.alignment="CENTER">
                <children>
-                  <Label text="Iniciar Sesión">
+                  <Label text="Registre nuevo usuario">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Label>
-                  <TextField promptText="Usuario" style="-fx-background-radius: 20;">
+                  <TextField promptText="Ingrese un nombre de usuario" style="-fx-background-radius: 20;">
                      <VBox.margin>
                         <Insets left="20.0" right="20.0" top="20.0" />
                      </VBox.margin>
                   </TextField>
-                  <TextField promptText="Contraseña" style="-fx-background-radius: 20;">
+                  <TextField promptText="ingrese una contraseña" style="-fx-background-radius: 20;">
                      <VBox.margin>
                         <Insets left="20.0" right="20.0" top="10.0" />
                      </VBox.margin>
                   </TextField>
-                  <Label text="¿No tiene una cuenta? cree una aqui">
+                  <TextField promptText="Confirme su contraseña" style="-fx-background-radius: 20;">
                      <VBox.margin>
-                        <Insets top="10.0" />
+                        <Insets left="20.0" right="20.0" top="10.0" />
                      </VBox.margin>
-                  </Label>
+                  </TextField>
+                  <TextField promptText="ingrese su direccion" style="-fx-background-radius: 20;">
+                     <VBox.margin>
+                        <Insets left="20.0" right="20.0" top="10.0" />
+                     </VBox.margin>
+                  </TextField>
                   <Button mnemonicParsing="false" style="-fx-background-color: #610D76; -fx-background-radius: 5;" text="Ingresar" textFill="WHITE">
                      <VBox.margin>
                         <Insets top="20.0" />
