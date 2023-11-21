@@ -12,7 +12,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(to bottom, #A418E5, #18E18D);" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.RegistraController">
    <children>
-      <BorderPane id="BorderPane" layoutX="-7.0" prefHeight="400.0" prefWidth="608.0" style="-fx-background-image: purple;" stylesheets="@../css/table.css">
+      <BorderPane id="BorderPane" layoutX="-7.0" prefHeight="400.0" prefWidth="608.0" style="-fx-background-color: linear-gradient(to bottom, #A418E5, #18E18D);">
          <center>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #1090B9; -fx-background-radius: 10;" BorderPane.alignment="CENTER">
                <children>
