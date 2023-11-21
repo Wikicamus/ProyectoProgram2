@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(to bottom, #A418E5, #18E18D);" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/20.0.1" fx:controller="controlador.Producto3Controller">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(to bottom, #A418E5, #18E18D);" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.Producto3Controller">
    <children>
       <Pane layoutX="34.0" layoutY="195.0" prefHeight="211.0" prefWidth="577.0" style="-fx-background-color: linear-gradient(to bottom, #D9D9D9, #1090B9); -fx-background-radius: 20;">
          <children>
@@ -27,8 +26,7 @@
             <Font size="31.0" />
          </font>
       </Label>
-      <ImageView fitHeight="115.0" fitWidth="174.0" layoutX="200.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fitHeight="115.0" fitWidth="174.0" layoutX="366.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="115.0" fitWidth="174.0" layoutX="282.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fitHeight="55.0" fitWidth="59.0" layoutX="561.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fitHeight="55.0" fitWidth="59.0" layoutX="495.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" />
       <Label layoutX="53.0" layoutY="92.0" text="Televisor Grande" textFill="WHITE">
