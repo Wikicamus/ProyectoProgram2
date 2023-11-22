@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -21,21 +22,30 @@
       </Label>
       <Pane layoutX="27.0" layoutY="101.0" prefHeight="279.0" prefWidth="561.0" style="-fx-background-color: linear-gradient(to bottom, #A118E1, #1090B9);">
          <children>
-            <ImageView fitHeight="205.0" fitWidth="206.0" layoutX="31.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="205.0" fitWidth="206.0" layoutX="31.0" layoutY="40.0" onMouseClicked="#IrEfecty" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../imagenes/Ef.png" />
-               </image></ImageView>
-            <ImageView fitHeight="194.0" fitWidth="227.0" layoutX="292.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></ImageView>
+            <ImageView fitHeight="194.0" fitWidth="227.0" layoutX="292.0" layoutY="43.0" onMouseClicked="#IrTarjeta" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../imagenes/TAR.png" />
-               </image></ImageView>
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></ImageView>
          </children>
       </Pane>
       <ImageView fitHeight="39.0" fitWidth="79.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fitHeight="46.0" fitWidth="74.0" layoutX="-10.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="46.0" fitWidth="74.0" layoutX="-10.0" onMouseClicked="#Atras" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../imagenes/AT.png" />
          </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </ImageView>
    </children>
 </AnchorPane>

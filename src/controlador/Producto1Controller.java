@@ -90,7 +90,6 @@ public class Producto1Controller implements Initializable {
                 try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Catalogo.fxml"));
             Parent root = loader.load();
-
             Stage vtnCatalogo = new Stage();
             vtnCatalogo.setTitle("Producto1");
             vtnCatalogo.setScene(new Scene(root));
