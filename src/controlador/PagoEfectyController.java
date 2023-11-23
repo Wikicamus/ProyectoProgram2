@@ -11,6 +11,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
@@ -49,17 +50,8 @@ public class PagoEfectyController implements Initializable {
 
     @FXML
     private void Atras(MouseEvent event) {
-                        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/OpcionesPago.fxml"));
-            Parent root = loader.load();
-            Stage vtnPago = new Stage();
-            vtnPago.setTitle("Opciones de Pago");
-            vtnPago.setScene(new Scene(root));
-            OpcionesPagoController controlOpPago = loader.getController();
-            vtnPago.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-    }
+        Stage stageActual = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stageActual.close();
     }
     
 }

@@ -11,6 +11,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -33,38 +34,41 @@ public class PagoTarjetaController implements Initializable {
         // TODO
     }
 
-    @FXML
-    private void IrTar(ActionEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Catalogo.fxml"));
-            Parent root = loader.load();
+   @FXML
+private void IrTar(ActionEvent event) {
+    try {
+        // Obtén el Stage de la escena actual
+        Stage stageActual = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-            Stage vtnCata = new Stage();
-            vtnCata.setTitle("Catalogo");
-            vtnCata.setScene(new Scene(root));
-            CatalogoController controlCArrito = loader.getController();
-            mostrarAlerta("Pagado con exito!!", "Al pagar en 24 llegara un correo de confirmación y su pedido\n"
-                    + "llegara en un máximo de 15 días,\n"
-                    + " muchas gracias por comprar con nosotros");
-            vtnCata.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        // Carga la nueva vista
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Catalogo.fxml"));
+        Parent root = loader.load();
+
+        // Configura la nueva escena
+        Scene nuevaEscena = new Scene(root);
+
+        // Muestra la nueva escena en un nuevo Stage
+        Stage nuevoStage = new Stage();
+        nuevoStage.setTitle("Catálogo");
+        nuevoStage.setScene(nuevaEscena);
+        CatalogoController controlCatalogo = loader.getController();
+
+        // Mostrar la alerta antes de cerrar la ventana actual
+        mostrarAlerta("Pagado con éxito!!", "Al pagar en 24 llegará un correo de confirmación y su pedido\n"
+                + "llegará en un máximo de 15 días,\n"
+                + " muchas gracias por comprar con nosotros");
+
+        // Cierra la ventana actual
+        stageActual.close();
+    } catch (IOException e) {
+        e.printStackTrace();
     }
+}
 
-    @FXML
+   @FXML
     private void Atras(MouseEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/OpcionesPago.fxml"));
-            Parent root = loader.load();
-            Stage vtnPago = new Stage();
-            vtnPago.setTitle("Opciones de Pago");
-            vtnPago.setScene(new Scene(root));
-            OpcionesPagoController controlOpPago = loader.getController();
-            vtnPago.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        Stage stageActual = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stageActual.close();
     }
 
     private void mostrarAlerta(String info, String msj) {

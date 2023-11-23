@@ -10,6 +10,7 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
@@ -64,18 +65,8 @@ public class OpcionesPagoController implements Initializable {
 
     @FXML
     private void Atras(MouseEvent event) {
-                try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Catalogo.fxml"));
-            Parent root = loader.load();
-
-            Stage vtnCata = new Stage();
-            vtnCata.setTitle("Catalogo");
-            vtnCata.setScene(new Scene(root));
-            CatalogoController controlCArrito = loader.getController();
-            vtnCata.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        Stage stageActual = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stageActual.close();
     }
     
 }

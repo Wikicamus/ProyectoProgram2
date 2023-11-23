@@ -11,6 +11,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -82,18 +83,8 @@ public class Producto3Controller implements Initializable {
 
     @FXML
     private void Atras(MouseEvent event) {
-                try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Catalogo.fxml"));
-            Parent root = loader.load();
-
-            Stage vtnCatalogo = new Stage();
-            vtnCatalogo.setTitle("Producto1");
-            vtnCatalogo.setScene(new Scene(root));
-           CatalogoController controlcat = loader.getController();
-            vtnCatalogo.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-    }
+        Stage stageActual = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stageActual.close();
     }
 
     @FXML
