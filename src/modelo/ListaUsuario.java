@@ -1,12 +1,11 @@
 package modelo;
 
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import javafx.application.Platform;
 import javafx.scene.control.Alert;
-import javafx.scene.control.DialogPane;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TextField;
 
 /**
@@ -57,7 +56,7 @@ public class ListaUsuario {
         return null; // El usuario no existe en la lista
     }
 
-    public void ActualizarElArchivo() {
+public void ActualizarElArchivo() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("Usuarios.txt"))) {
             Usuario actual = cab;
             while (actual != null) {
@@ -68,16 +67,17 @@ public class ListaUsuario {
             }
             System.out.println("Información de usuarios guardada/actualizada en el archivo: Usuarios.txt");
         } catch (IOException e) {
-             mostrarAlerta("Error", "ya existe el usuario, pruebe con otro");
+            mostrarAlertaError("Error al escribir en el archivo", e.getMessage());
         }
     }
-     private void mostrarAlerta(String info, String msj) {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setHeaderText(null);
-        alert.setTitle(info);
-        alert.setContentText(msj);
-        DialogPane dialogPane = alert.getDialogPane();
-        dialogPane.setStyle("-fx-background-color: linear-gradient(to bottom, #A418E5, #18E18D);");
-        alert.showAndWait();
-     }
+
+    private void mostrarAlertaError(String titulo, String mensaje) {
+        Alert alerta = new Alert(AlertType.ERROR);
+        alerta.setTitle("Error");
+        alerta.setHeaderText(titulo);
+        alerta.setContentText(mensaje);
+        
+        // Mostrar la alerta en el hilo de JavaFX para garantizar que se muestre correctamente
+        Platform.runLater(() -> alerta.showAndWait());
+    }
 }
