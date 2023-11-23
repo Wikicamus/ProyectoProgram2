@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
 package controlador;
 
 import java.io.IOException;
@@ -15,6 +11,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import modelo.ListaUsuario;
 
 /**
  * FXML Controller class
@@ -23,13 +20,15 @@ import javafx.stage.Stage;
  */
 public class LoginController implements Initializable {
 
-    /**
-     * Initializes the controller class.
-     */
+    ListaUsuario LisUsu = new ListaUsuario();
+
+    public LoginController() {
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 
     @FXML
     private void AbrirRegistro(MouseEvent event) {
@@ -37,19 +36,18 @@ public class LoginController implements Initializable {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Registro.fxml"));
             Parent root = loader.load();
 
-            Stage vtnRegistro = new Stage();
-            vtnRegistro.setTitle("CATALOGO");
-           vtnRegistro.setScene(new Scene(root));
-
+            Stage vtnregis = new Stage();
+            vtnregis.setTitle("Registrar");
+            vtnregis.setScene(new Scene(root));
             // Obtén el controlador de la segunda ventana si es necesario
             RegistraController controlregis = loader.getController();
+            controlregis.setLisUsu(LisUsu);
 
-           // mostrarAlerta("INFO LOGIN", "HA INICIADO SESION");
-            vtnRegistro.show();
+            vtnregis.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
-    
+
     }
 
     @FXML
@@ -59,7 +57,7 @@ public class LoginController implements Initializable {
             Parent root = loader.load();
 
             Stage vtnCatalogo = new Stage();
-            vtnCatalogo.setTitle("CATALOGO");
+            vtnCatalogo.setTitle("Catalogo");
             vtnCatalogo.setScene(new Scene(root));
             CatalogoController controlCatalog = loader.getController();
 
@@ -69,7 +67,5 @@ public class LoginController implements Initializable {
             e.printStackTrace();
         }
     }
-    
-    
-    
+
 }
