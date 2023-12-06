@@ -30,11 +30,11 @@ public class PagoEfectyController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 
     @FXML
     private void IrCata(ActionEvent event) {
-                try {
+        try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Catalogo.fxml"));
             Parent root = loader.load();
 
@@ -53,5 +53,5 @@ public class PagoEfectyController implements Initializable {
         Stage stageActual = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stageActual.close();
     }
-    
+
 }

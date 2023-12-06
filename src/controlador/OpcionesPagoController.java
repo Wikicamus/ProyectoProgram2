@@ -29,11 +29,11 @@ public class OpcionesPagoController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 
     @FXML
     private void IrEfecty(MouseEvent event) {
-                try {
+        try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/PagoEfecty.fxml"));
             Parent root = loader.load();
 
@@ -49,7 +49,7 @@ public class OpcionesPagoController implements Initializable {
 
     @FXML
     private void IrTarjeta(MouseEvent event) {
-                try {
+        try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/PagoTarjeta.fxml"));
             Parent root = loader.load();
 
@@ -68,5 +68,5 @@ public class OpcionesPagoController implements Initializable {
         Stage stageActual = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stageActual.close();
     }
-    
+
 }

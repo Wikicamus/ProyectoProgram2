@@ -29,7 +29,7 @@ public class CatalogoController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 
     @FXML
     private void Produc1(MouseEvent event) {
@@ -48,12 +48,12 @@ public class CatalogoController implements Initializable {
             vtnPr1.show();
         } catch (IOException e) {
             e.printStackTrace();
-    }
+        }
     }
 
     @FXML
     private void Produc2(MouseEvent event) {
-                try {
+        try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Producto2.fxml"));
             Parent root = loader.load();
 
@@ -68,18 +68,18 @@ public class CatalogoController implements Initializable {
             vtnPr2.show();
         } catch (IOException e) {
             e.printStackTrace();
-    }
+        }
     }
 
     @FXML
     private void Produc3(MouseEvent event) {
-                try {
+        try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Producto3.fxml"));
             Parent root = loader.load();
 
             Stage vtnPr3 = new Stage();
             vtnPr3.setTitle("Producto3");
-           vtnPr3.setScene(new Scene(root));
+            vtnPr3.setScene(new Scene(root));
 
             // Obtén el controlador de la segunda ventana si es necesario
             Producto3Controller controlPr3 = loader.getController();
@@ -88,12 +88,12 @@ public class CatalogoController implements Initializable {
             vtnPr3.show();
         } catch (IOException e) {
             e.printStackTrace();
-    }
+        }
     }
 
     @FXML
     private void irCarrito(ActionEvent event) {
-                try {
+        try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Carrito.fxml"));
             Parent root = loader.load();
 
@@ -108,27 +108,12 @@ public class CatalogoController implements Initializable {
             vtnCarrito.show();
         } catch (IOException e) {
             e.printStackTrace();
-    }
+        }
     }
 
     @FXML
     private void irLista(ActionEvent event) {
-                try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/ListDeseos.fxml"));
-            Parent root = loader.load();
 
-            Stage vtnLista = new Stage();
-            vtnLista.setTitle("Lista de Deseos");
-            vtnLista.setScene(new Scene(root));
-
-            // Obtén el controlador de la segunda ventana si es necesario
-            ListDeseosController controlLista = loader.getController();
-
-            //mostrarAlerta("INFO LOGIN", "HA INICIADO SESION");
-            vtnLista.show();
-        } catch (IOException e) {
-            e.printStackTrace();
     }
-    }
-    
+
 }

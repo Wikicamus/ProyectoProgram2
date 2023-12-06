@@ -34,9 +34,9 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <TableView layoutX="33.0" layoutY="100.0" prefHeight="228.0" prefWidth="531.0" style="-fx-background-color: linear-gradient(to bottom, #A118E1, #1090B9); -fx-background-radius: 20;">
+      <TableView fx:id="tblProd" layoutX="33.0" layoutY="100.0" prefHeight="228.0" prefWidth="531.0" style="-fx-background-color: linear-gradient(to bottom, #A118E1, #1090B9); -fx-background-radius: 20;">
         <columns>
-          <TableColumn prefWidth="530.0" style="-fx-background-color: #A118E1;" text="Nombre del producto" />
+          <TableColumn fx:id="columProd" prefWidth="530.0" style="-fx-background-color: #A118E1;" text="Nombre del producto" />
         </columns>
       </TableView>
    </children>

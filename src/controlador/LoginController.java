@@ -7,7 +7,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -40,7 +39,7 @@ public class LoginController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+        LisUsu.cargarInfoUser();
     }
 
     @FXML
@@ -49,13 +48,15 @@ public class LoginController implements Initializable {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Registro.fxml"));
             Parent root = loader.load();
 
-            Stage vtnregis = new Stage();
-            vtnregis.setTitle("Registrar");
-            vtnregis.setScene(new Scene(root));
-            RegistraController controlregis = loader.getController();
-            controlregis.setLisUsu(LisUsu);
+            Stage vtnRegister = new Stage();
+            vtnRegister.setTitle("REGISTRO");
+            vtnRegister.setScene(new Scene(root));
 
-            vtnregis.show();
+            // Obtén el controlador de la segunda ventana si es necesario
+            RegistraController controlRegister = loader.getController();
+            controlRegister.setLisUsu(LisUsu);
+
+            vtnRegister.showAndWait();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -64,69 +65,58 @@ public class LoginController implements Initializable {
 
     @FXML
     private void IngresCata(ActionEvent event) {
-        if (LisUsu.buscarUsuario(usuario.getText()) != null) {
-            try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Catalogo.fxml"));
-                Parent root = loader.load();
+        if (LisUsu.getUser(usuario.getText())) {
+            if (LisUsu.verificarContraseña(contra.getText())) {
+                try {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Catalogo.fxml"));
+                    Parent root = loader.load();
 
-                Stage vtnCatalogo = new Stage();
-                vtnCatalogo.setTitle("Catalogo");
-                vtnCatalogo.setScene(new Scene(root));
-                CatalogoController controlCatalog = loader.getController();
-                mostrarAlertaB("Ingreso", "Inicio sesion correctamente");
-                vtnCatalogo.show();
-                Stage stageActual = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                stageActual.close();
-            } catch (IOException e) {
-                e.printStackTrace();
+                    Stage vtnCatalogo = new Stage();
+                    vtnCatalogo.setTitle("CATALOGO");
+                    vtnCatalogo.setScene(new Scene(root));
 
+                    // Obtén el controlador de la segunda ventana si es necesario
+                    CatalogoController controlCatalog = loader.getController();
+
+                    mostrarAlerta("INFO LOGIN", "HA INICIADO SESION");
+                    vtnCatalogo.showAndWait();
+                } catch (IOException e) {
+                    e.printStackTrace();
+
+                }
+            } else {
+                mostrarAlerta("INFO LOGIN", "Contraseña incorrecta");
             }
-
         } else {
-            mostrarAlerta("Error", "El usuario no existe!!");
+            mostrarAlerta("INFO LOGIN", "El usuario no existe por favor registrese");
         }
     }
 
     private void mostrarAlerta(String info, String msj) {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setHeaderText(null);
         alert.setTitle(info);
         alert.setContentText(msj);
+
         DialogPane dialogPane = alert.getDialogPane();
-        dialogPane.setStyle("-fx-background-color: linear-gradient(to bottom, #A418E5, #18E18D);");
+
         alert.showAndWait();
-    }
-      private void mostrarAlertaB(String info, String msj) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setHeaderText(null);
-        alert.setTitle(info);        
-        alert.setContentText(msj);
-        DialogPane dialogPane = alert.getDialogPane();
-        dialogPane.setStyle("-fx-background-color: linear-gradient(to bottom, #A418E5, #18E18D);");
-        alert.showAndWait();
+
     }
 
     @FXML
     private void ing(KeyEvent event) {
-        if (event.getCode() == KeyCode.ENTER) {
-            // Código que deseas ejecutar cuando se presiona Enter
-            IngresCata.fire();
-        }
+
     }
 
     @FXML
     private void ie(KeyEvent event) {
-        if (event.getCode() == KeyCode.ENTER) {
-            contra.requestFocus();
-        }
+
     }
 
     @FXML
     private void ic(KeyEvent event) {
-        if (event.getCode() == KeyCode.ENTER) {
-            // Código que deseas ejecutar cuando se presiona Enter
-            IngresCata.fire();
-        }
+
     }
 
 }

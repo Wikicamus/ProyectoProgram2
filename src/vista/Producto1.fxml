@@ -7,77 +7,111 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(to bottom, #A418E5, #18E18D);" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.Producto1Controller">
-   <children>
-      <Pane layoutX="14.0" layoutY="175.0" prefHeight="211.0" prefWidth="577.0" style="-fx-background-color: linear-gradient(to bottom, #D9D9D9, #1090B9); -fx-background-radius: 20;">
-         <children>
-            <Label layoutX="9.0" layoutY="9.0" prefHeight="127.0" prefWidth="559.0" text=" Tamaño :                             Grande y pesado, pantalla de 14 pulgadas&#10; Imagen :                              Baja calidad, colores apagados, contraste alto&#10; Tecnología :                        Disco de Nipkow, CRT, IP&#10; Conectividad :                    Limitada, con un solo conector de antena">
-               <font>
-                  <Font size="17.0" />
-               </font>
-            </Label>
-            <Button layoutX="479.0" layoutY="178.0" mnemonicParsing="false" onAction="#IrPago" style="-fx-background-color: #610D76;" text="Comprar" textFill="WHITE">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor></Button>
-            <Button layoutX="114.0" layoutY="176.0" mnemonicParsing="false" onAction="#irCarrito" prefHeight="25.0" prefWidth="94.0" style="-fx-background-color: #610D76;" text="Ver carrito" textFill="#fffbfb">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor></Button>
-            <Button layoutX="230.0" layoutY="176.0" mnemonicParsing="false" onAction="#IrLis" style="-fx-background-color: #610D76;" text="Ver lista de Deseos" textFill="WHITE">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor></Button>
-         </children>
-      </Pane>
-      <Label layoutX="217.0" layoutY="14.0" text="TeleCampus" textAlignment="CENTER" textFill="WHITE">
-         <font>
-            <Font size="31.0" />
-         </font>
-      </Label>
-      <ImageView fitHeight="148.0" fitWidth="147.0" layoutX="261.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../imagenes/TV.png" />
-         </image></ImageView>
-      <ImageView fitHeight="115.0" fitWidth="174.0" layoutX="408.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../imagenes/238-2388691_logo-oferta-png-ultrasupernew-logo-removebg-preview-removebg-preview.png" />
-         </image></ImageView>
-      <Label layoutX="33.0" layoutY="72.0" text="Televisor Antiguo" textFill="WHITE">
-         <font>
-            <Font size="21.0" />
-         </font>
-      </Label>
-      <Label layoutX="39.0" layoutY="109.0" text="Precio: 349.990">
-         <font>
-            <Font size="22.0" />
-         </font>
-      </Label>
-      <ImageView fitHeight="46.0" fitWidth="74.0" layoutX="-10.0" layoutY="-7.0" onMouseClicked="#Atras" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../imagenes/AT.png" />
-         </image>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </ImageView>
-      <ImageView fitHeight="31.0" fitWidth="55.0" layoutX="505.0" layoutY="17.0" onMouseClicked="#ALis" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../imagenes/LD.png" />
-         </image>
-         <cursor>
-            <Cursor fx:constant="OPEN_HAND" />
-         </cursor>
-      </ImageView>
-      <ImageView fitHeight="74.0" fitWidth="79.0" layoutX="547.0" layoutY="-5.0" onMouseClicked="#Acarrito" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../imagenes/Ca.png" />
-         </image>
-         <cursor>
-            <Cursor fx:constant="OPEN_HAND" />
-         </cursor>
-      </ImageView>
-   </children>
+    <children>
+        <Pane layoutX="14.0" layoutY="175.0" prefHeight="211.0" prefWidth="577.0" style="-fx-background-color: linear-gradient(to bottom, #D9D9D9, #1090B9); -fx-background-radius: 20;">
+            <children>
+                <Label layoutX="9.0" layoutY="9.0" prefHeight="127.0" prefWidth="559.0" text=" Tamaño :                             Grande y pesado, pantalla de 14 pulgadas&#10; Imagen :                              Baja calidad, colores apagados, contraste alto&#10; Tecnología :                        Disco de Nipkow, CRT, IP&#10; Conectividad :                    Limitada, con un solo conector de antena">
+                    <font>
+                        <Font size="17.0" />
+                    </font>
+                </Label>
+                <Button layoutX="479.0" layoutY="178.0" mnemonicParsing="false" onAction="#IrPago" style="-fx-background-color: #610D76;" text="Comprar" textFill="WHITE">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Button layoutX="114.0" layoutY="176.0" mnemonicParsing="false" onAction="#irCarrito" prefHeight="25.0" prefWidth="94.0" style="-fx-background-color: #610D76;" text="Ver carrito" textFill="#fffbfb">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Button layoutX="230.0" layoutY="176.0" mnemonicParsing="false" onAction="#IrLis" style="-fx-background-color: #610D76;" text="Ver lista de Deseos" textFill="WHITE">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+            </children>
+        </Pane>
+        <Label layoutX="217.0" layoutY="14.0" text="TeleCampus" textAlignment="CENTER" textFill="WHITE">
+            <font>
+                <Font size="31.0" />
+            </font>
+        </Label>
+        <ImageView fitHeight="148.0" fitWidth="147.0" layoutX="261.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../imagenes/TV.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="115.0" fitWidth="174.0" layoutX="408.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../imagenes/238-2388691_logo-oferta-png-ultrasupernew-logo-removebg-preview-removebg-preview.png" />
+            </image>
+        </ImageView>
+        <Label fx:id="nombreProd" layoutX="33.0" layoutY="72.0" text="Televisor Antiguo" textFill="WHITE">
+            <font>
+                <Font size="21.0" />
+            </font>
+        </Label>
+        <Label layoutX="39.0" layoutY="109.0" text="Precio: 349.990">
+            <font>
+                <Font size="22.0" />
+            </font>
+        </Label>
+        <ImageView fitHeight="46.0" fitWidth="74.0" layoutX="-10.0" layoutY="-7.0" onMouseClicked="#Atras" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../imagenes/AT.png" />
+            </image>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </ImageView>
+        <ImageView fx:id="btnAggFav" fitHeight="31.0" fitWidth="55.0" layoutX="505.0" layoutY="17.0" onMouseClicked="#agregarFav" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../imagenes/LD.png" />
+            </image>
+            <cursor>
+                <Cursor fx:constant="OPEN_HAND" />
+            </cursor>
+        </ImageView>
+        <ImageView fitHeight="74.0" fitWidth="79.0" layoutX="547.0" layoutY="-5.0" onMouseClicked="#agregarCarrito" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../imagenes/Ca.png" />
+            </image>
+            <cursor>
+                <Cursor fx:constant="OPEN_HAND" />
+            </cursor>
+        </ImageView>
+        <AnchorPane id="AnchorPane" fx:id="contTblFav" layoutX="10.0" layoutY="10.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(to bottom, #A418E5, #18E18D);" visible="false">
+            <children>
+                <Label layoutX="227.0" layoutY="17.0" text="TeleCampus" textAlignment="CENTER" textFill="WHITE">
+                    <font>
+                        <Font size="31.0" />
+                    </font>
+                </Label>
+                <Label layoutX="33.0" layoutY="63.0" text="Productos en la lista de deseos" textFill="WHITE">
+                    <font>
+                        <Font size="26.0" />
+                    </font>
+                </Label>
+                <Button layoutX="515.0" layoutY="361.0" mnemonicParsing="false" onAction="#volverCatalogoBtn" prefHeight="25.0" prefWidth="71.0" style="-fx-background-color: #610D76;" text="Seguir" textFill="WHITE">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <ImageView fitHeight="46.0" fitWidth="74.0" layoutX="-10.0" onMouseClicked="#VolverCat" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../imagenes/AT.png" />
+                    </image>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </ImageView>
+                <VBox fx:id="tblFav" layoutX="178.0" layoutY="100.0" prefHeight="286.0" prefWidth="257.0" />
+            </children>
+        </AnchorPane>
+    </children>
 </AnchorPane>

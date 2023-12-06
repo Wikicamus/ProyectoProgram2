@@ -15,8 +15,17 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.DialogPane;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.ColumnConstraints;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 /**
@@ -26,17 +35,24 @@ import javafx.stage.Stage;
  */
 public class Producto3Controller implements Initializable {
 
+    @FXML
+    private AnchorPane contTblFav;
+    @FXML
+    private VBox tblFav;
+    @FXML
+    private Label nombreProd;
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 
-   @FXML
+    @FXML
     private void IrPago(ActionEvent event) {
-                try {
+        try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/OpcionesPago.fxml"));
             Parent root = loader.load();
             Stage vtnPago = new Stage();
@@ -46,39 +62,7 @@ public class Producto3Controller implements Initializable {
             vtnPago.show();
         } catch (IOException e) {
             e.printStackTrace();
-    }
-    }
-
-    @FXML
-    private void irCarrito(ActionEvent event) {
-                try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Carrito.fxml"));
-            Parent root = loader.load();
-
-            Stage vtnCarrito = new Stage();
-            vtnCarrito.setTitle("Carrito");
-            vtnCarrito.setScene(new Scene(root));
-            CarritoController controlCArrito = loader.getController();
-            vtnCarrito.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-    }
-    }
-
-    @FXML
-    private void IrLis(ActionEvent event) {
-                        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/ListDeseos.fxml"));
-            Parent root = loader.load();
-
-            Stage vtnLis = new Stage();
-            vtnLis.setTitle("Lista de Deseos");
-            vtnLis.setScene(new Scene(root));
-            ListDeseosController controlCarrito = loader.getController();
-            vtnLis.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-    }
+        }
     }
 
     @FXML
@@ -87,24 +71,60 @@ public class Producto3Controller implements Initializable {
         stageActual.close();
     }
 
-    @FXML
-    private void ALis(MouseEvent event) {
-        mostrarAlerta("Añadir", "Añadido correctamente a la lista de deseos");
-        
-    }
-
-    @FXML
-    private void Acarrito(MouseEvent event) {
-        mostrarAlerta("Añadir", "Añadido correctamente al carrito");
-    }
     private void mostrarAlerta(String info, String msj) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setHeaderText(null);
-        alert.setTitle(info);        
+        alert.setTitle(info);
         alert.setContentText(msj);
         DialogPane dialogPane = alert.getDialogPane();
         dialogPane.setStyle("-fx-background-color: linear-gradient(to bottom, #A418E5, #18E18D);");
         alert.showAndWait();
     }
-    
+
+    @FXML
+    private void volverCatalogoBtn(ActionEvent event) {
+        contTblFav.setVisible(false);
+
+    }
+
+    @FXML
+    private void VolverCat(MouseEvent event) {
+        contTblFav.setVisible(false);
+
+    }
+
+    @FXML
+    private void verCarrito(ActionEvent event) {
+    }
+
+    @FXML
+    private void verFav(ActionEvent event) {
+    }
+
+    @FXML
+    private void aggCarrito(MouseEvent event) {
+    }
+
+    @FXML
+    private void aggFavorito(MouseEvent event) {
+        Label lblNombre = new Label();
+        Button btnDel = new Button("ELIMINAR ELEMENTO");
+
+        GridPane contLibSelected = new GridPane();
+        ColumnConstraints column = new ColumnConstraints();
+
+        column.setPrefWidth(tblFav.getWidth() / 2);
+
+        contLibSelected.getColumnConstraints().addAll(column);
+        contLibSelected.prefWidth(tblFav.getMaxWidth());
+        contLibSelected.setBackground(new Background(new BackgroundFill(Color.LIGHTBLUE, null, null)));
+
+        lblNombre.setText(nombreProd.getText());
+
+        contLibSelected.add(lblNombre, 0, 0);
+        contLibSelected.add(btnDel, 0, 1);
+
+        tblFav.getChildren().add(contLibSelected);
+    }
+
 }

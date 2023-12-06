@@ -30,11 +30,11 @@ public class CarritoController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 
     @FXML
     private void IrPago(ActionEvent event) {
-                        try {
+        try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/OpcionesPago.fxml"));
             Parent root = loader.load();
             Stage vtnPago = new Stage();
@@ -44,19 +44,19 @@ public class CarritoController implements Initializable {
             vtnPago.show();
         } catch (IOException e) {
             e.printStackTrace();
-    }
+        }
     }
 
     @FXML
     private void Ircata(ActionEvent event) {
-                try {
+        try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/Catalogo.fxml"));
             Parent root = loader.load();
 
             Stage vtnCata = new Stage();
             vtnCata.setTitle("Catalogo");
             vtnCata.setScene(new Scene(root));
-           CatalogoController controlCArrito = loader.getController();
+            CatalogoController controlCArrito = loader.getController();
             vtnCata.show();
         } catch (IOException e) {
             e.printStackTrace();
@@ -68,5 +68,5 @@ public class CarritoController implements Initializable {
         Stage stageActual = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stageActual.close();
     }
-    
+
 }

@@ -9,5 +9,5 @@ package modelo;
  * @author wikic
  */
 public class Televisor {
-    
+
 }

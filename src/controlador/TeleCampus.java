@@ -15,13 +15,13 @@ import javafx.stage.Stage;
  * @author wikic
  */
 public class TeleCampus extends Application {
-    
+
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/vista/Login.fxml"));
-        
+
         Scene scene = new Scene(root);
-        
+
         stage.setScene(scene);
         stage.show();
     }
@@ -32,5 +32,5 @@ public class TeleCampus extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-    
+
 }

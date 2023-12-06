@@ -11,6 +11,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.DialogPane;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -33,11 +34,11 @@ public class RegistraController implements Initializable {
     private TextField reinContra;
     @FXML
     private TextField ingreseDIr;
+    @FXML
+    private Button btnReg;
 
     public RegistraController() {
     }
-    
-    
 
     public RegistraController(ListaUsuario lisUsu) {
         this.lisUsu = lisUsu;
@@ -58,17 +59,25 @@ public class RegistraController implements Initializable {
 
     @FXML
     private void Resgistrar(ActionEvent event) {
-        lisUsu.agregar(ingreseUsu, ingreseCon, ingreseDIr);
-        lisUsu.ActualizarElArchivo();
+        if (ingreseCon.getText().equals(reinContra.getText())) {
+            lisUsu.addUser(ingreseUsu, ingreseCon, ingreseDIr);
+            lisUsu.guardarInfoUser();
+            Stage stage = (Stage) btnReg.getScene().getWindow();
+            stage.close();
+        } else {
+            mostrarAlerta("INFO REGISTER", "La contraseña no coincide");
+            ingreseCon.setText("");
+            reinContra.setText("");
+            ingreseCon.requestFocus();
+        }
     }
 
-@FXML
-private void Atras(MouseEvent event) {
+    @FXML
+    private void Atras(MouseEvent event) {
         Stage stageActual = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stageActual.close();
 
-}
-
+    }
 
     private void mostrarAlerta(String info, String msj) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
