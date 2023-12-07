@@ -111,6 +111,8 @@ public class Producto2Controller implements Initializable {
 
     @FXML
     private void verFav(ActionEvent event) {
+                contTblFav.setVisible(true);
+
     }
 
     @FXML

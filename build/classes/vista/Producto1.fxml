@@ -85,7 +85,7 @@
                 <Cursor fx:constant="OPEN_HAND" />
             </cursor>
         </ImageView>
-        <AnchorPane id="AnchorPane" fx:id="contTblFav" layoutX="10.0" layoutY="10.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(to bottom, #A418E5, #18E18D);">
+        <AnchorPane id="AnchorPane" fx:id="contTblFav" layoutX="10.0" layoutY="10.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(to bottom, #A418E5, #18E18D);" visible="false">
             <children>
                 <Label layoutX="227.0" layoutY="17.0" text="TeleCampus" textAlignment="CENTER" textFill="WHITE">
                     <font>

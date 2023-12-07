@@ -103,6 +103,24 @@ public class Producto3Controller implements Initializable {
 
     @FXML
     private void aggCarrito(MouseEvent event) {
+        Label lblNombre = new Label();
+        Button btnDel = new Button("ELIMINAR ELEMENTO");
+
+        GridPane contLibSelected = new GridPane();
+        ColumnConstraints column = new ColumnConstraints();
+
+        column.setPrefWidth(tblFav.getWidth() / 2);
+
+        contLibSelected.getColumnConstraints().addAll(column);
+        contLibSelected.prefWidth(tblFav.getMaxWidth());
+        contLibSelected.setBackground(new Background(new BackgroundFill(Color.LIGHTBLUE, null, null)));
+
+        lblNombre.setText(nombreProd.getText());
+
+        contLibSelected.add(lblNombre, 0, 0);
+        contLibSelected.add(btnDel, 0, 1);
+
+        tblFav.getChildren().add(contLibSelected);
     }
 
     @FXML
